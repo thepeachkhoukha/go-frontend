@@ -10,6 +10,6 @@ import { Event } from '../../../models/event-details.model';
 export class TopEventsComponent {
   @Input() topEvent: Event;
 
-  constructor() { 
+  constructor() {
   }
 }

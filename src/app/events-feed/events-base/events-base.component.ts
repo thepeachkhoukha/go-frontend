@@ -15,20 +15,20 @@ import { UserGeneralInfoResponse } from '../models/user-general-info-response.mo
 export class EventsBaseComponent implements OnInit {
 
   userGeneralInfo: EventsNearmeRequest = null;
-  eventTopRequest: {city: string, username: string} = null;
+  eventTopRequest: { city: string, username: string } = null;
   image: string = null;
-  showFeed:boolean =false;
-  constructor(public dialog: MatDialog,  
-              private eventsHandler: EventsHandlerService, 
-              private userGeneralInfoService: UserGeneralInfoService) { }
+  showFeed: boolean = false;
+  constructor(public dialog: MatDialog,
+    private eventsHandler: EventsHandlerService,
+    private userGeneralInfoService: UserGeneralInfoService) { }
 
   ngOnInit() {
     this.userGeneralInfoService.getGeneralInfo().subscribe(
-      (data: UserGeneralInfoResponse)=>{
-          this.userGeneralInfo = {username: localStorage.getItem("username"), city: data.city, lat: data.lat, lng: data.lng, diameter:1000};
-          this.eventTopRequest = {city: data.city, username: localStorage.getItem("username")};
-          this.image = data.image;
-          this.showFeed = true;
+      (data: UserGeneralInfoResponse) => {
+        this.userGeneralInfo = { username: localStorage.getItem("username"), city: data.city, lat: data.lat, lng: data.lng, diameter: 1000 };
+        this.eventTopRequest = { city: data.city, username: localStorage.getItem("username") };
+        this.image = data.image;
+        this.showFeed = true;
       }
     )
   }
@@ -40,19 +40,19 @@ export class EventsBaseComponent implements OnInit {
 
     dialogRef.afterClosed().subscribe(result => {
       let eventSaveRequest: EventSaveRequest = {
-                            ownerUsername:result.generalInfo.ownerUsername,
-                            title: result.generalInfo.title,
-                            description: result.generalInfo.description,
-                            shortDescription: result.generalInfo.shortDescription,
-                            date: result.specificInfo.date,
-                            startTime: result.specificInfo.startTime,
-                            endTime: result.specificInfo.endTime,
-                            threshold: result.specificInfo.threshold,
-                            maximum: result.specificInfo.expectedNumber,
-                            coverImage: result.image,
-                            location: result.specificInfo.location,
-                            city: result.specificInfo.city
-                          };
+        ownerUsername: result.generalInfo.ownerUsername,
+        title: result.generalInfo.title,
+        description: result.generalInfo.description,
+        shortDescription: result.generalInfo.shortDescription,
+        date: result.specificInfo.date,
+        startTime: result.specificInfo.startTime,
+        endTime: result.specificInfo.endTime,
+        threshold: result.specificInfo.threshold,
+        maximum: result.specificInfo.expectedNumber,
+        coverImage: result.image,
+        location: result.specificInfo.location,
+        city: result.specificInfo.city
+      };
       this.eventsHandler.saveEvent(eventSaveRequest).subscribe();
     });
   }

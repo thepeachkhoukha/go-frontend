@@ -10,15 +10,15 @@ import { FormGroup, Validators, FormBuilder } from '@angular/forms';
 export class NewEventComponent implements OnInit {
 
   categories: any[] = [
-    {value: 'education-0', viewValue: 'Education'},
-    {value: 'teen-1', viewValue: 'Teen'},
-    {value: 'network-2', viewValue: 'Network'}
+    { value: 'education-0', viewValue: 'Education' },
+    { value: 'teen-1', viewValue: 'Teen' },
+    { value: 'network-2', viewValue: 'Network' }
   ];
 
   firstFormGroup: FormGroup;
   secondFormGroup: FormGroup;
 
-// GOOGLE MAPS AUTOCOMPLETE
+  // GOOGLE MAPS AUTOCOMPLETE
   address: Object;
   establishmentAddress: Object;
 
@@ -26,17 +26,17 @@ export class NewEventComponent implements OnInit {
   formattedEstablishmentAddress: string;
 
   phone: string;
-// GOOGLE MAPS AUTOCOMPLETE
+  // GOOGLE MAPS AUTOCOMPLETE
 
-//Image upload
+  //Image upload
   fileData: File = null;
   previewUrl: any = null;
-  base64textString:any;
-//Image upload
+  base64textString: any;
+  //Image upload
 
-  constructor(private dialogRef: MatDialogRef<NewEventComponent>, 
-              private _formBuilder: FormBuilder,
-              public zone: NgZone) { }
+  constructor(private dialogRef: MatDialogRef<NewEventComponent>,
+    private _formBuilder: FormBuilder,
+    public zone: NgZone) { }
 
   ngOnInit() {
     this.firstFormGroup = this._formBuilder.group({
@@ -49,29 +49,30 @@ export class NewEventComponent implements OnInit {
       location: ['', Validators.required],
       city: ['', Validators.required],
       date: ['', Validators.required],
-      startTime: ['',Validators.required],
-      endTime: ['',Validators.required],
+      startTime: ['', Validators.required],
+      endTime: ['', Validators.required],
       expectedNumber: ['', Validators.required],
       threshold: ['', Validators.required],
     });
   }
 
   submit(): void {
-      console.log(this.secondFormGroup.value);
-      this.dialogRef.close({generalInfo:this.firstFormGroup.value, 
-                            specificInfo: this.secondFormGroup.value,
-                            image: this.base64textString
-      });
+    console.log(this.secondFormGroup.value);
+    this.dialogRef.close({
+      generalInfo: this.firstFormGroup.value,
+      specificInfo: this.secondFormGroup.value,
+      image: this.base64textString
+    });
   }
 
-  fileProgress(fileInput: any){
+  fileProgress(fileInput: any) {
     this.fileData = <File>fileInput.target.files[0];
     this.preview();
   }
 
-  preview(){
+  preview() {
     var mimeType = this.fileData.type;
-    if(mimeType.match(/image\/*/)==null){
+    if (mimeType.match(/image\/*/) == null) {
       return;
     }
     var reader = new FileReader();
@@ -80,15 +81,15 @@ export class NewEventComponent implements OnInit {
     reader.onload = this._handleReaderLoaded.bind(this);
     reader.readAsBinaryString(this.fileData);
   }
-  
+
   _handleReaderLoaded(readerEvt) {
     var binaryString = readerEvt.target.result;
-           this.base64textString= btoa(binaryString);
-           console.log(btoa(binaryString));
+    this.base64textString = btoa(binaryString);
+    console.log(btoa(binaryString));
     this.previewUrl = atob(this.base64textString);
-   }
+  }
 
-// GOOGLE MAPS AUTOCOMPLETE
+  // GOOGLE MAPS AUTOCOMPLETE
   getAddress(place: object) {
     this.address = place['formatted_address'];
     this.phone = this.getPhone(place);
@@ -173,5 +174,5 @@ export class NewEventComponent implements OnInit {
       phone = this.getAddrComponent(place, COMPONENT_TEMPLATE);
     return phone;
   }
-//END OF GOOGLE MAPS AUTOCOMPLETE
+  //END OF GOOGLE MAPS AUTOCOMPLETE
 }

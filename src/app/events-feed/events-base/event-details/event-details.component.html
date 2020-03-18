@@ -6,7 +6,7 @@
 <img [src]="previewUrl" class="cover-photo">
 <div class="event-details">
     <div class="event-description">
-        <p>{{event.title}}</p>
+        <p>{{event.title}} <br /><i>{{event.date}}</i></p>
         <p style="width: 600px;">{{event.description}}</p>
         <p class="event-address">Budapest, wesselnyi utca 16, 1119</p>
         <div class="event-actions">
@@ -15,7 +15,7 @@
             <span class="spacer"></span>
             <button mat-button (click)="onReportClick()">REPORT</button>
         </div>
-        
+
     </div>
     <div class="event-participants">
         <p>Participants:</p>

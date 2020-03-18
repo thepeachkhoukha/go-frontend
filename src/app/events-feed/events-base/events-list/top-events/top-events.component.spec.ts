@@ -8,9 +8,9 @@ describe('TopEventsComponent', () => {
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [ TopEventsComponent ]
+      declarations: [TopEventsComponent]
     })
-    .compileComponents();
+      .compileComponents();
   }));
 
   beforeEach(() => {

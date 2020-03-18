@@ -1,28 +1,27 @@
 <mat-card class="event-card">
-    <mat-card-header>
-      <div mat-card-avatar class="event-header-image">
-      </div>
-      <mat-card-title>{{event.title}}</mat-card-title>
-      <mat-card-subtitle>{{event.ownerUsername}}</mat-card-subtitle>
-    </mat-card-header>
-    <a (click)="openDialog()">
+  <mat-card-header>
+    <div mat-card-avatar class="event-header-image">
+    </div>
+    <mat-card-title>{{event.title}}</mat-card-title>
+    <mat-card-subtitle>{{event.ownerUsername}}</mat-card-subtitle>
+  </mat-card-header>
+  <a (click)="openDialog()">
     <img mat-card-image [src]="previewUrl" alt="Cover photo">
     <mat-card-content>
       <p>
         {{event.description}}
       </p>
     </mat-card-content>
-    </a>
-    <mat-card-actions class="event-actions">
-      <button mat-button (click) = "onJoin()">JOIN</button>
-      <button mat-button>SAVE</button>
-      <span class="spacer"></span>
-      <div class="likes">
-        <p id="number-of-likes"style="font-size: 10px;"> 10</p>
-        <div class="image-container">
-          <img src="https://i.imgur.com/JvTsfdf.png" 
-                style="max-height:10px; max-width: 10px; margin-top: 15%;">   
-        </div>
+  </a>
+  <mat-card-actions class="event-actions">
+    <button mat-button (click)="onJoin()">JOIN</button>
+    <button mat-button>SAVE</button>
+    <span class="spacer"></span>
+    <div class="likes">
+      <p id="number-of-likes" style="font-size: 10px;"> 10</p>
+      <div class="image-container">
+        <img src="https://i.imgur.com/JvTsfdf.png" style="max-height:10px; max-width: 10px; margin-top: 15%;">
       </div>
-    </mat-card-actions>
+    </div>
+  </mat-card-actions>
 </mat-card>

@@ -13,12 +13,12 @@ export class EventsListComponent implements OnInit {
   @Input() userGeneralInfo: EventsNearmeRequest;
 
   categories: any[] = [
-    {value: 'education-0', viewValue: 'Education'},
-    {value: 'teen-1', viewValue: 'Teen'},
-    {value: 'network-2', viewValue: 'Network'}
+    { value: 'education-0', viewValue: 'Education' },
+    { value: 'teen-1', viewValue: 'Teen' },
+    { value: 'network-2', viewValue: 'Network' }
   ];
 
-  events:Event[];
+  events: Event[];
   topEvent: Event;
   show: boolean = false;
 
@@ -28,11 +28,11 @@ export class EventsListComponent implements OnInit {
     console.log(this.userGeneralInfo);
     this.eventHandler.getEvent(this.userGeneralInfo).subscribe(
       (data: Event[]) => {
-          this.events = data;
+        this.events = data;
       }
     )
-    this.eventHandler.getTopEvents({city: this.userGeneralInfo.city, username: localStorage.getItem("username")}).subscribe(
-      (data: Event) =>{
+    this.eventHandler.getTopEvents({ city: this.userGeneralInfo.city, username: localStorage.getItem("username") }).subscribe(
+      (data: Event) => {
         this.topEvent = data;
         console.log(this.topEvent);
         this.show = true;

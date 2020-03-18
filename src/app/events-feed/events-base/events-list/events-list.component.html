@@ -5,22 +5,22 @@
                 <input matInput [matDatepicker]="picker" placeholder="Choose a date">
                 <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
                 <mat-datepicker #picker></mat-datepicker>
-            </mat-form-field>    
+            </mat-form-field>
             <span class="spacer"></span>
             <mat-form-field>
                 <mat-label>
                     Category
                 </mat-label>
                 <mat-select>
-                  <mat-option *ngFor="let category of categories" [value]="category.value">
-                    {{category.viewValue}}
-                  </mat-option>
+                    <mat-option *ngFor="let category of categories" [value]="category.value">
+                        {{category.viewValue}}
+                    </mat-option>
                 </mat-select>
             </mat-form-field>
         </div>
         <div class="flex-container">
             <div class="flex-item" *ngFor="let event of events">
-                <app-single-event [event]="event" (eventJoined) = "eventJoined()"></app-single-event>
+                <app-single-event [event]="event" (eventJoined)="eventJoined()"></app-single-event>
             </div>
         </div>
     </div>

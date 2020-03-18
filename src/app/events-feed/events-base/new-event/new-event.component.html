@@ -1,6 +1,5 @@
-<div class="close" 
-     style="margin-top:-10px; text-align: end; margin-right: -19px; cursor: pointer;"
-     (click)="onNoClick()">
+<div class="close" style="margin-top:-10px; text-align: end; margin-right: -19px; cursor: pointer;"
+    (click)="onNoClick()">
     <i class="material-icons">
         close
     </i>
@@ -8,55 +7,49 @@
 <p>Create New Event</p>
 <mat-horizontal-stepper [linear]="isLinear" #stepper>
     <mat-step [stepControl]="firstFormGroup">
-      <form [formGroup]="firstFormGroup">
-        <ng-template matStepLabel>General Information</ng-template>
+        <form [formGroup]="firstFormGroup">
+            <ng-template matStepLabel>General Information</ng-template>
             <div class="event-form">
                 <div class="flex-container-row">
                     <mat-form-field appearance="outline">
                         <mat-label>Organizer</mat-label>
-                        <input matInput 
-                               formControlName="ownerUsername"
-                               placeholder="Organizer">
+                        <input matInput formControlName="ownerUsername" placeholder="Organizer">
                         <mat-icon matSuffix>sentiment_very_satisfied</mat-icon>
                     </mat-form-field>
                     <span class="spacer"></span>
                     <mat-form-field appearance="outline" style="cursor: pointer; ">
                         <mat-label>Category</mat-label>
                         <mat-select>
-                        <mat-option *ngFor="let category of categories" [value]="category.value">
-                            {{category.viewValue}}
-                        </mat-option>
+                            <mat-option *ngFor="let category of categories" [value]="category.value">
+                                {{category.viewValue}}
+                            </mat-option>
                         </mat-select>
-                    </mat-form-field>    
+                    </mat-form-field>
                 </div>
                 <mat-form-field appearance="outline">
                     <mat-label>Event Title</mat-label>
-                    <input  matInput 
-                            formControlName="title"       
-                            placeholder="Event Title">
+                    <input matInput formControlName="title" placeholder="Event Title">
                     <mat-hint>Choose a descriptive title</mat-hint>
                 </mat-form-field>
-                
+
                 <mat-form-field appearance="outline">
                     <mat-label>General Description</mat-label>
-                    <textarea id="event-general-description" 
-                              formControlName="description" 
-                              matInput appearance="outline" placeholder="General description of the event"></textarea>
+                    <textarea id="event-general-description" formControlName="description" matInput appearance="outline"
+                        placeholder="General description of the event"></textarea>
                 </mat-form-field>
-                
+
                 <mat-form-field appearance="outline">
                     <mat-label>Short Description</mat-label>
-                    <textarea id="event-short-description" 
-                              formControlName="shortDescription"        
-                              matInput appearance="outline" placeholder="Short description of the event"></textarea>
+                    <textarea id="event-short-description" formControlName="shortDescription" matInput
+                        appearance="outline" placeholder="Short description of the event"></textarea>
                 </mat-form-field>
                 <div class="form-actions">
                     <button mat-button matStepperNext>Next</button>
                 </div>
             </div>
         </form>
-        </mat-step>
-        <mat-step [stepControl]="secondFormGroup">
+    </mat-step>
+    <mat-step [stepControl]="secondFormGroup">
         <form [formGroup]="secondFormGroup">
             <ng-template matStepLabel>Fill out your address</ng-template>
             <div class="event-form">
@@ -64,19 +57,13 @@
                 <div class="flex-container-row">
                     <mat-form-field appearance="outline">
                         <mat-label>Location</mat-label>
-                        <input  matInput 
-                                placeholder="Budapest, Hungary" 
-                                type="text" 
-                                formControlName="location">
+                        <input matInput placeholder="Budapest, Hungary" type="text" formControlName="location">
                         <mat-icon matSuffix>sentiment_very_satisfied</mat-icon>
                     </mat-form-field>
                     <span class="spacer"></span>
                     <mat-form-field appearance="outline">
                         <mat-label>City</mat-label>
-                        <input  matInput 
-                                placeholder="Budapest" 
-                                type="text" 
-                                formControlName="city">
+                        <input matInput placeholder="Budapest" type="text" formControlName="city">
                     </mat-form-field>
                 </div>
                 <mat-form-field>
@@ -88,58 +75,40 @@
                 <div class="flex-container-row">
                     <mat-form-field appearance="outline">
                         <mat-label>Start Time</mat-label>
-                        <input  matInput 
-                                placeholder="18:00" 
-                                type="text" 
-                                formControlName="startTime">
+                        <input matInput placeholder="18:00" type="text" formControlName="startTime">
                         <mat-icon matSuffix>sentiment_very_satisfied</mat-icon>
                     </mat-form-field>
                     <span class="spacer"></span>
                     <mat-form-field appearance="outline">
                         <mat-label>EndTime</mat-label>
-                        <input  matInput 
-                                placeholder="21:00" 
-                                type="text" 
-                                formControlName="endTime">
+                        <input matInput placeholder="21:00" type="text" formControlName="endTime">
                     </mat-form-field>
                 </div>
                 <div class="flex-container-row">
                     <mat-form-field appearance="outline">
                         <mat-label>Expected number</mat-label>
-                        <input  matInput 
-                                placeholder="Expected number" 
-                                type="number" 
-                                formControlName="expectedNumber">
+                        <input matInput placeholder="Expected number" type="number" formControlName="expectedNumber">
                         <mat-hint>Max number of people</mat-hint>
                         <mat-icon matSuffix>sentiment_very_satisfied</mat-icon>
                     </mat-form-field>
                     <span class="spacer"></span>
                     <mat-form-field id="threshold-number" appearance="outline">
                         <mat-label>Threshold number</mat-label>
-                        <input  matInput 
-                                placeholder="Threshold number" 
-                                type="number" 
-                                formControlName="threshold">
+                        <input matInput placeholder="Threshold number" type="number" formControlName="threshold">
                         <mat-hint>Threshold number of people</mat-hint>
                     </mat-form-field>
                 </div>
                 <div class="flex-container-row">
                     <label for="general-file-upload" class="custom-file-upload">
-                        <i class="fa fa-cloud-upload"></i> General Image 
+                        <i class="fa fa-cloud-upload"></i> General Image
                     </label>
-                    <input  type="file" 
-                            id="general-file-upload" 
-                            name="image" 
-                            (change)="fileProgress($event)" />    
+                    <input type="file" id="general-file-upload" name="image" (change)="fileProgress($event)" />
                     <span class="spacer"></span>
 
                     <label for="cover-file-upload" class="custom-file-upload">
-                        <i class="fa fa-cloud-upload"></i> Cover Image 
+                        <i class="fa fa-cloud-upload"></i> Cover Image
                     </label>
-                    <input type="file" 
-                           id="cover-file-upload" 
-                           name="image" 
-                           (change)="fileProgress($event)" />    
+                    <input type="file" id="cover-file-upload" name="image" (change)="fileProgress($event)" />
                 </div>
                 <div class="form-actions">
                     <button mat-button matStepperPrevious>Back</button>
@@ -159,6 +128,3 @@
         </div>
     </mat-step> -->
 </mat-horizontal-stepper>
-
-
-
