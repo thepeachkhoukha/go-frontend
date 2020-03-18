@@ -1,0 +1,23 @@
+:host{
+    height: 100vh;
+    .flex{
+        display: flex;
+        flex-direction: column;
+        .user-profile{
+            margin-top: 100px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            width: 100%;
+            .flex-container{
+                display: flex;
+                flex-direction: row;
+                margin-top: 20px;
+                .user-circle{
+                    position:fixed;   
+                }
+            }
+        
+        }
+    }
+}

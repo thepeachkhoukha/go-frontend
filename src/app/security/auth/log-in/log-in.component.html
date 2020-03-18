@@ -1,0 +1,47 @@
+<div class="login-container">
+  <div>
+    <img src="https://i.imgur.com/JvTsfdf.png" 
+    style="max-width: 10%; max-height:10%; margin-top: 5%;" alt="">
+    <div>
+      <label class="logo">LezGo</label>
+    </div>
+  </div>  
+  <br>
+  <br>
+    <form class="login-form"
+          (ngSubmit)="onLogIn()" #f = "ngForm">
+        <label class="log-in-form-label" style="cursor: pointer;" (click)="onSignUp()">Go to sign up</label>
+        <mat-form-field class="login-input">
+          <input matInput 
+                 placeholder="username" 
+                 [formControl]="usernameFormControl"
+                 [errorStateMatcher]="matcher">
+          <mat-hint>Provide a valid username!</mat-hint>
+          <mat-error *ngIf="usernameFormControl.hasError('required')">
+            Email is required
+          </mat-error>
+          <button mat-button matSuffix mat-icon-button aria-label="Clear" (click)="this.usernameFormControl.setValue('');">
+            <mat-icon>close</mat-icon>
+          </button>
+        </mat-form-field>
+        <br>
+        <mat-form-field class="login-input">
+            <input  matInput 
+                    placeholder="Password" 
+                    [type]="hide ? 'password' : 'text'"
+                    [formControl]="passwordFormControl">
+            <mat-hint>Please enter your password</mat-hint>
+            <mat-error *ngIf="passwordFormControl.hasError('required')">
+                Password is required
+            </mat-error>
+            <button mat-icon-button matSuffix (click)="hide = !hide" [attr.aria-label]="'Hide password'" [attr.aria-pressed]="hide">
+            <mat-icon>{{hide ? 'visibility_off' : 'visibility'}}</mat-icon>
+            </button>
+        </mat-form-field>
+        <br>
+        <br>
+        <button mat-mini-fab class="login-button" type="submit">
+          <mat-icon class="login-button-arrow">arrow_right_alt</mat-icon>
+        </button>
+    </form>
+</div>

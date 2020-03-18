@@ -1,0 +1,27 @@
+<div class="flex" *ngIf="show">
+  <app-header [image] = "image"></app-header>
+  <div class="report-container">
+      <p class="p-font">Thank you for reporting!</p>
+      <label class="question">Please tell us why you would like to report this event?</label>
+      <form class="report-form" 
+            (ngSubmit)="onReport()" 
+            #f = "ngForm">
+          <mat-form-field class="report-full-width">
+              <mat-label>Categories</mat-label>
+              <mat-select>
+                <mat-option *ngFor="let category of categories" [value]="category.value">
+                  {{category.viewValue}}
+                </mat-option>
+              </mat-select>
+          </mat-form-field>
+        
+          <mat-form-field class="report-full-width">
+            <mat-label>Reason</mat-label>
+            <textarea ngModel name = "reason" matInput placeholder="Ex. It makes me feel..."></textarea>
+          </mat-form-field>
+          <button mat-mini-fab class="submit-button" type="submit">
+            <mat-icon class="submit-button-arrow">arrow_right_alt</mat-icon>
+          </button>
+      </form>
+  </div>
+</div>

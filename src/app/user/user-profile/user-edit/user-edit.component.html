@@ -1,0 +1,33 @@
+<div class="close" 
+     style="margin-top:-10px; text-align: end; margin-right: -15px; cursor: pointer;"
+     (click)="onNoClick()">
+    <i class="material-icons">
+        close
+    </i>
+</div>
+
+<form   (ngSubmit)="onEditUser()"
+        #f = "ngForm"
+        class="flex-container">
+
+    <img src="https://i.imgur.com/1FXvmc4.jpg" 
+    class="profile-picture">
+
+    <mat-form-field appearance="outline">
+    <mat-label>University</mat-label>
+    <input matInput placeholder="University">
+    <mat-icon matSuffix>class</mat-icon>
+    </mat-form-field>
+
+    <mat-form-field appearance="outline">
+    <mat-label>Work</mat-label>
+    <input matInput placeholder="Work">
+    <mat-icon matSuffix>work</mat-icon>
+    </mat-form-field>        
+
+    <AutocompleteComponent (setAddress)="getAddress($event)" adressType="address"></AutocompleteComponent>
+    <div class="form-actions">
+    <button mat-button type="submit">Save</button>
+    </div>
+</form>
+

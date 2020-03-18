@@ -1,0 +1,39 @@
+.flex{
+    display: flex;
+    flex-direction: column;
+
+}
+.report-container{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 10%;
+    .p-font{
+        font-family: 'Liu Jian Mao Cao', cursive; 
+        font-size:60px;
+    }
+    .question{
+        color:#eb5745;
+        font-family: 'Montserrat', sans-serif;
+        font-size: 12px;  
+    }
+
+    .report-form {
+        min-width: 150px;
+        max-width: 500px;
+        width: 100%;
+        margin-top: 20px;
+        
+        .submit-button{
+            background-color: #eb5745;
+            margin-left: 90%;
+            .submit-button-arrow{
+              color: white;
+            }
+        }
+    }
+      
+    .report-full-width {
+        width: 100%;
+    }
+}

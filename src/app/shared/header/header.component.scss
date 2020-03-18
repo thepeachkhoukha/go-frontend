@@ -1,0 +1,20 @@
+.tool-bar{
+    opacity: 1;
+    position:fixed; 
+    z-index:2;
+    
+    .spacer {
+        flex: 1 1 auto;
+    }
+
+    .profile-picture{
+        max-height:50px; 
+        max-width: 50px; 
+        border-radius: 50%;
+        cursor: pointer;
+    }
+
+    .icon {
+        padding: 0 14px;
+    }
+}

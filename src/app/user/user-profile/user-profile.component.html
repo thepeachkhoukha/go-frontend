@@ -1,0 +1,10 @@
+<div class="flex" *ngIf="user!==undefined">
+    <app-header [image] = "user.image"></app-header>
+    <div class="user-profile">
+        <app-user-general-info [user] = "user"></app-user-general-info>
+        <div class="flex-container">
+            <app-user-activities style ="position:fixed"></app-user-activities>
+            <app-user-events  [events]="events" [myEvents]="myEvents" style="margin-left: 250px"></app-user-events>
+        </div>
+    </div>    
+</div>

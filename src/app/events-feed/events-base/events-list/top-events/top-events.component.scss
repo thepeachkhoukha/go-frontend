@@ -1,0 +1,37 @@
+:host{
+    .top-box{
+        display: flex;
+        flex-direction: column;
+        position: fixed;
+        .top-event{
+            width: 350px;
+            height: 80px;
+            background-color: #E0ECDE;
+            border-radius: 4px;
+            margin-bottom: 100px;
+            display: flex;
+            flex-direction: row;
+            .owner-details{
+                width: 140px;
+                margin-top: 3%;
+                margin-left: 3%;
+                .owner-image {
+                    background-image: url('https://i.imgur.com/1FXvmc4.jpg');
+                    background-size: cover;
+                }
+                .owner-name{
+                    font-size: 10px;
+                    margin-left: 3%;
+                }
+            }
+            .event-details{
+                .event-description{
+                    font-size: 12px;
+                }
+                .event-address{
+                    font-size: 10px;
+                }
+            }
+        }
+    }
+}

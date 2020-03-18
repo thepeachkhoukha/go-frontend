@@ -1,0 +1,40 @@
+<mat-tab-group>
+    <mat-tab label="Going">
+        <div class="add-event">
+            <button mat-button (click)="onCreateEvent()">
+                <i class="material-icons">
+                    add
+                </i>
+                Create Event
+            </button>
+        </div>        
+        <div class="user-events">
+            <div class="flex-container">
+                <div class="flex-item" *ngFor="let event of events">
+                    <app-single-event [event]="event" ></app-single-event>
+                </div>
+            </div>
+        </div> 
+    </mat-tab>
+    <mat-tab label="Saved">
+         
+    </mat-tab>
+    <mat-tab label="Mine">
+        <div class="add-event">
+            <button mat-button (click)="onCreateEvent()">
+                <i class="material-icons">
+                    add
+                </i>
+                Create Event
+            </button>
+        </div>        
+        <div class="user-events">
+            <div class="flex-container">
+                <div class="flex-item" *ngFor="let event of myEvents">
+                    <app-single-event [event]="event" ></app-single-event>
+                </div>
+            </div>
+        </div>
+    </mat-tab>
+  </mat-tab-group>
+  

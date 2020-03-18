@@ -1,0 +1,36 @@
+<div class="close" style="margin-top:-10px; text-align: end;    margin-right: -19px;">
+    <i class="material-icons">
+        close
+    </i>
+</div>
+<img [src]="previewUrl" class="cover-photo">
+<div class="event-details">
+    <div class="event-description">
+        <p>{{event.title}}</p>
+        <p style="width: 600px;">{{event.description}}</p>
+        <p class="event-address">Budapest, wesselnyi utca 16, 1119</p>
+        <div class="event-actions">
+            <button mat-button>JOIN</button>
+            <button mat-button>SAVE</button>
+            <span class="spacer"></span>
+            <button mat-button (click)="onReportClick()">REPORT</button>
+        </div>
+        
+    </div>
+    <div class="event-participants">
+        <p>Participants:</p>
+        <div class="participant-cover-photo">
+            <div mat-card-avatar class="photo-image"><span>{{event.ownerUsername}}</span></div>
+        </div>
+        <div class="top-comments">
+            <div class="top-comment" matBadge="4" style="margin-top: 50px;">
+                <div class="comment-content">
+                    <p class="content">it's gonna be lit!!</p>
+                </div>
+                <div class="comment-owner">
+                    <p class="owner">John Dave</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

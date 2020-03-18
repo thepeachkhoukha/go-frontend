@@ -1,0 +1,14 @@
+<mat-toolbar class="tool-bar"> 
+    <div (click)="onFeedClick()" style="cursor: pointer;">
+        <img src="https://i.imgur.com/JvTsfdf.png" 
+        style="max-height:30px; max-width: 30px"> 
+    <span style="font-family: 'Lobster', cursive;">LezGo</span>
+    </div>
+    
+    <span class="spacer"></span>
+    <img [src]="profilePicture"
+        (click)="onProfileClick()" 
+        class="profile-picture">
+    <span class="spacer"></span>
+    <mat-icon class="icon" aria-hidden="false" aria-label="Example user verified icon">keyboard_arrow_down</mat-icon>
+</mat-toolbar>

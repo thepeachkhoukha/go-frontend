@@ -1,0 +1,32 @@
+.login-container {
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+
+  .login-form {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+
+    .log-in-form-label{
+      color:#eb5745;
+      font-family: 'Montserrat', sans-serif;
+      font-size: 12px; 
+      margin-left:-9%
+    }
+
+    .login-button{
+      background-color: #eb5745;
+      margin-left: 19%;
+      .login-button-arrow{
+        color: white;
+      }
+    }
+  }
+  
+  .logo{
+    font-family: 'Lobster', cursive;
+    font-size: 38px;
+  }
+}
