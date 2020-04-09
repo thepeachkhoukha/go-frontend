@@ -1,18 +1,21 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import {FormsModule, ReactiveFormsModule} from '@angular/forms';
+import { UserGeneralInfoComponent } from './profile/shared/user-general-info/user-general-info.component';
 
-import { UserProfileComponent } from './user-profile/user-profile.component';
-import { UserGeneralInfoComponent } from './user-profile/user-general-info/user-general-info.component';
-import { UserEventsComponent } from './user-profile/user-events/user-events.component';
-import { UserActivitiesComponent } from './user-profile/user-activities/user-activities.component';
 import { AngularMaterial } from '../angular-material.module';
 import { EventsFeedModule } from '../events-feed/events-feed.module';
 import { NewEventComponent } from '../events-feed/events-base/new-event/new-event.component';
-import { UserEditComponent } from './user-profile/user-edit/user-edit.component';
+
 import { SharedModule } from '../shared/shared.module';
 import { HttpClientModule } from '@angular/common/http';
 import { UserRoutingModule } from './user-routing-module';
+import { FriendProfileComponent } from './profile/friend-profile/friend-profile.component';
+import { ProfileComponent } from './profile/profile.component';
+import { UserProfileComponent } from './profile/user-profile/user-profile.component';
+import { UserEventsComponent } from './profile/shared/user-events/user-events.component';
+import { UserActivitiesComponent } from './profile/user-profile/user-activities/user-activities.component';
+import { UserEditComponent } from './profile/shared/user-general-info/user-edit/user-edit.component';
 
 
 @NgModule({
@@ -21,7 +24,9 @@ import { UserRoutingModule } from './user-routing-module';
     UserGeneralInfoComponent, 
     UserEventsComponent,
     UserActivitiesComponent,
-    UserEditComponent
+    UserEditComponent,
+    FriendProfileComponent,
+    ProfileComponent
   ],
   imports: [
     CommonModule,

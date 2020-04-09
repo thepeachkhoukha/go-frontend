@@ -1,0 +1,42 @@
+.user-general-information{
+    display: flex;
+    flex-direction: row;
+    margin-top: 20px;
+    .profile-picture-container{
+        width: 250px;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        .profile-picture{
+            max-height:130px; 
+            max-width: 130px; 
+            border-radius: 50%;
+            box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+        }
+    }
+    .description-card{
+        background-color: #f9f6f7;
+        width: 450px;
+        height: 150px;
+        border-radius: 5px;
+        box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+        opacity: 0.5;
+        .content{
+            display: flex;
+            flex-direction: column;
+            margin-left: 10px;
+            margin-right: 5px;
+            #edit{
+                justify-content: flex-end;  
+                cursor: pointer; 
+            }
+            .flex-container-row{
+                display: flex;
+                flex-direction: row;
+                .content-style{
+                    font-size: 10px;
+                }
+            }
+        }
+    }
+}

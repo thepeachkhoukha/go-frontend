@@ -1,0 +1,23 @@
+<div class="friend-profile" *ngIf="userInfo !== null">
+    <app-user-general-info [user] = "userInfo.userDetails"></app-user-general-info>
+    <button class="add-button" 
+            mat-raised-button 
+            color="primary" 
+            (click) = "onFollow()" 
+            *ngIf="!friends">
+        Follow
+    </button>
+    <button class="add-button" 
+            mat-raised-button color="primary" 
+            (click) = "onUnfollow()"
+            *ngIf="friends">
+        Unfollow
+    </button>
+    <div class="flex-row">
+        <app-user-events [createEvent] = "false"  
+                        [events]="userInfo.events" 
+                        [myEvents]="userInfo.myEvents" 
+                        style="margin-left: 250px">
+        </app-user-events>
+    </div>
+</div>

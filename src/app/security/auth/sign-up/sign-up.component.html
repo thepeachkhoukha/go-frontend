@@ -1,80 +1,43 @@
 <div class="signup-container">
     <div>
-        <img src="https://i.imgur.com/JvTsfdf.png" 
-        style="max-width: 10%; max-height:10%; margin-top: 5%;" alt="">
+        <img src="https://i.imgur.com/JvTsfdf.png" style="max-width: 10%; max-height:10%; margin-top: 5%;" alt="">
         <div>
-          <label class="logo">LezGo</label>
+            <label class="logo">LezGo</label>
         </div>
-    </div> 
+    </div>
     <br>
     <br>
-    <form (ngSubmit)="onSignUp()" #f = "ngForm" class="signup-form">
+    <form (ngSubmit)="onSignUp()" #f="ngForm" class="signup-form">
         <label class="signup-label">We would like to get to know you</label>
         <br>
         <br>
         <label class="sign-up-form-label" style="cursor: pointer;" (click)="onLogIn()">Go to login</label>
         <br>
         <mat-form-field class="signup-input">
-            <input  matInput 
-                    type="text"
-                    class= "form-control"
-                    id= "username"
-                    name= "username"
-                    ngModel
-                    required
-                    placeholder="username">
+            <input matInput type="text" class="form-control" id="username" name="username" ngModel required
+                placeholder="username">
         </mat-form-field>
         <br>
         <mat-form-field class="signup-input">
-            <input  matInput 
-                    type="text"
-                    class= "form-control"
-                    id= "password"
-                    name= "password"
-                    ngModel
-                    required
-                    placeholder="password">
+            <input matInput type="password" class="form-control" id="password" name="password" ngModel required
+                placeholder="password">
         </mat-form-field>
         <br>
         <mat-form-field class="signup-input">
-            <input  matInput 
-                    type="text"
-                    class= "form-control"
-                    id= "name"
-                    name= "name"
-                    ngModel
-                    required
-                    placeholder="Full Name">
+            <input matInput type="text" class="form-control" id="name" name="name" ngModel required
+                placeholder="Full Name">
         </mat-form-field>
         <br>
         <mat-form-field class="signup-input">
-            <input  matInput 
-                    type="text"
-                    id= "location"
-                    name= "location"
-                    ngModel
-                    required
-                    placeholder="Location">
+            <input matInput type="text" id="location" name="location" ngModel required placeholder="Location">
         </mat-form-field>
         <br>
         <mat-form-field class="signup-input">
-            <input  matInput 
-                    type="text"
-                    id= "university"
-                    name= "university"
-                    ngModel
-                    required
-                    placeholder="University">
+            <input matInput type="text" id="university" name="university" ngModel required placeholder="University">
         </mat-form-field>
         <br>
         <mat-form-field class="signup-input">
-            <input  matInput 
-                    type="text"
-                    id= "occupation"
-                    name= "occupation"
-                    ngModel
-                    required
-                    placeholder="Occupation">
+            <input matInput type="text" id="occupation" name="occupation" ngModel required placeholder="Occupation">
         </mat-form-field>
         <br>
         <label for="profile-pic-file-upload" class="custom-file-upload">
@@ -83,8 +46,8 @@
         <input type="file" id="profile-pic-file-upload" name="image" (change)="fileProgress($event)" />
         <br>
         <br>
-        <button mat-mini-fab class="signup-button" >
-            <mat-icon class="signup-button-arrow">arrow_right_alt</mat-icon>
+        <button mat-mini-fab class="signup-button" [disabled]="!f.valid">
+            <mat-icon class="login-button-arrow">arrow_right_alt</mat-icon>
         </button>
         <br>
         <br>

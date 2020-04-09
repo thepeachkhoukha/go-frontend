@@ -2,7 +2,7 @@ import { Component, OnInit, ViewChild } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
 import { EventsHandlerService } from '../../services/events-handler.service';
 import { UserGeneralInfoService } from '../../services/user-general-info.service';
-import { UserGeneralInfoResponse } from '../../models/user-general-info-response.model';
+import { UserGeneralInfoResponse } from '../../../shared/model/user-general-info-response.model';
 
 @Component({
   selector: 'app-report-event',

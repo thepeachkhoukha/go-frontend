@@ -25,7 +25,6 @@ export class EventsListComponent implements OnInit {
   constructor(private eventHandler: EventsHandlerService) { }
 
   ngOnInit() {
-    console.log(this.userGeneralInfo);
     this.eventHandler.getEvent(this.userGeneralInfo).subscribe(
       (data: Event[]) => {
         this.events = data;
@@ -34,7 +33,6 @@ export class EventsListComponent implements OnInit {
     this.eventHandler.getTopEvents({ city: this.userGeneralInfo.city, username: localStorage.getItem("username") }).subscribe(
       (data: Event) => {
         this.topEvent = data;
-        console.log(this.topEvent);
         this.show = true;
       }
     )

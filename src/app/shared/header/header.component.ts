@@ -22,4 +22,11 @@ export class HeaderComponent implements OnInit{
   onFeedClick(){
     this.router.navigate(['feed']);
   }
+
+  logOut(){
+    localStorage.removeItem("isLoggedIn");
+    localStorage.removeItem("username");
+    localStorage.removeItem("token");
+    this.router.navigate(['']);
+  }
 }

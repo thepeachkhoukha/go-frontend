@@ -1,0 +1,27 @@
+<div class="event-today" [matBadge]="numberOfTodaysEvent" matBadgePosition="above after">
+    <p style="text-align: center; vertical-align: middle;">
+        You have {{numberOfTodaysEvent}} events to attend today
+    </p>
+</div>
+<div class="user-circle-activities">
+    <div class="event-notifications">
+        <p>8 of your lezgo circle are participating in event 1</p>
+    </div>
+    <div class="event-notifications">
+        <p>3 of your lezgo circle are participating in event 2</p>
+    </div>
+    <div class="user-circle" [matBadge]="circle.length" style="height: 60px;">
+        <p style="font-size: 10px;
+                text-align: left;
+                margin-top: -18px;">
+            My circle
+        </p>
+        <div mat-card-avatar class="photo-image" 
+            *ngFor="let friend of circle"
+            (click)="onFriendClick(friend.username)">
+            <img [src]="friend.image"
+            class="profile-picture">
+            <span>{{friend.username}}</span>
+        </div>
+    </div>
+</div> 

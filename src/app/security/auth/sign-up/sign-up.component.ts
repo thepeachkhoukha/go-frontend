@@ -10,7 +10,6 @@ import { AuthService } from '../services/auth.service';
   styleUrls: ['./sign-up.component.scss']
 })
 export class SignUpComponent implements OnInit{
-
   fileData: File = null;
   previewUrl: any = null;
   base64textString:any;
@@ -32,7 +31,6 @@ export class SignUpComponent implements OnInit{
     else{
       this.authService.logout();  
       this.getLocation();
-      console.log(this.lat);
     }
   }
   

@@ -14,4 +14,5 @@ export interface Event{
     endTime: string;
     threshold: number;
     maximum: number;
+    numberOfParticipants: number;
 }

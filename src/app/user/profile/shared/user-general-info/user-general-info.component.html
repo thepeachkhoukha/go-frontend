@@ -1,0 +1,41 @@
+<div class="user-general-information">
+    <div class="profile-picture-container">
+        <img [src]="profilePicture" 
+        class="profile-picture">
+        <p>{{user.name}}</p>
+    </div>
+    <div class="description-card">
+        <div class="content">
+            <div class="flex-container-row" 
+                 id="edit" 
+                 (click)="openDialog()"
+                 *ngIf="edit"
+            >
+                <i class="material-icons">
+                    edit_attributes
+                </i>
+            </div>
+            <div class="spacer" style="margin-top: 15px;" *ngIf="!edit">
+
+            </div>
+            <div class="flex-container-row">
+                <i class="material-icons">
+                    work
+                </i>
+                <p class="content-style">Automation Analyst Intern, à ExxonMobil</p>
+            </div>
+            <div class="flex-container-row">
+                <i class="material-icons">
+                    home
+                </i>
+                <p class="content-style">Habite à {{user.location}}</p>
+            </div>
+            <div class="flex-container-row">
+                <i class="material-icons">
+                    class
+                </i>
+                <p class="content-style">University: {{user.university}}</p>
+            </div>
+        </div>
+    </div> 
+</div>

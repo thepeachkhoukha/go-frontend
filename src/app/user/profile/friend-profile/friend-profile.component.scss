@@ -1,0 +1,22 @@
+:host{
+    height: 100vh;
+    .friend-profile{
+        margin-top: 100px;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        .flex-row{
+            display: flex;
+            flex-direction: row;
+        }
+        .add-button{
+            margin-left: -450px;
+            border-style: none;
+            height: 40px;
+            width: 100px;
+            border-radius: 5px;
+        }
+        
+
+    }
+}

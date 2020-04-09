@@ -5,7 +5,7 @@ import { EventsHandlerService } from '../services/events-handler.service';
 import { UserGeneralInfoService } from '../services/user-general-info.service';
 import { EventSaveRequest } from '../models/event-save-request.model';
 import { EventsNearmeRequest } from '../models/events-nearme-request.model';
-import { UserGeneralInfoResponse } from '../models/user-general-info-response.model';
+import { UserGeneralInfoResponse } from '../../shared/model/user-general-info-response.model';
 
 @Component({
   selector: 'app-events-base',
